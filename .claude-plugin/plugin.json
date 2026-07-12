@@ -1,0 +1,20 @@
+{
+  "name": "prd-creator-gnb",
+  "version": "0.1.0",
+  "description": "Convierte una idea cruda en un PRD visual (HTML) + milestones ejecutables, y lo manda a Linear como issues. En español de México. Fork de buildermethods/bm-prd-creator con salida HTML y conexión a Linear.",
+  "author": {
+    "name": "Gabriel Neuman / GNB Labs",
+    "url": "https://gabrielneuman.com",
+    "email": "soy@gabrielneuman.com"
+  },
+  "keywords": [
+    "prd",
+    "product-requirements",
+    "linear",
+    "milestones",
+    "planning",
+    "claude-code",
+    "spanish-mx",
+    "LATAM"
+  ]
+}

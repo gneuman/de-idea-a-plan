@@ -1,0 +1,11 @@
+# Config local de MCP (contiene tokens tras autenticar)
+.mcp.json
+
+# PRDs generados al probar el skill
+_prd/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

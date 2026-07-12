@@ -1,0 +1,11 @@
+{
+  "//": "Copia este archivo a .mcp.json (o agrégalo a tu config de Claude Code) para conectar Linear.",
+  "//2": "El skill to-linear necesita este MCP para crear issues y milestones.",
+  "//3": "Autentícate con /mcp dentro de Claude Code después de agregarlo.",
+  "mcpServers": {
+    "linear": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.linear.app/sse"]
+    }
+  }
+}

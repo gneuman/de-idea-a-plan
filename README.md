@@ -26,6 +26,18 @@ Cuando le pides a un agente de IA que construya algo desde una idea vaga, improv
 
 Un plan cerrado arregla eso: es contra lo que el agente construye, sin inventar. Y este lo armas **conversando** — una decisión a la vez, con el agente proponiéndote un default y su razón, para que tú solo corrijas en vez de escribir desde cero. No necesitas saber de código.
 
+### Ejemplo real: CobraFácil
+
+Una idea: *"Un app para que freelancers en México den seguimiento a facturas vencidas"*
+
+En 10 minutos de conversación tienes:
+- **Qué hace:** Registro de clientes/facturas, recordatorios escalados (3/15/30 días), envío por WhatsApp y email.
+- **Qué NO:** No genera CFDI, no cobra dentro de la app, no es multi-usuario.
+- **Cómo se arma:** 2 etapas — Foundation (CRUD + tablero) y Recordatorios (integraciones + jobs).
+- **Con qué:** Next.js, PostgreSQL, Resend, WhatsApp Cloud API, Vercel.
+
+→ Plan visual listo en `_plan/plan.html`, con instrucciones por etapa.
+
 ---
 
 ## Instalación
@@ -53,14 +65,21 @@ Reinicia Claude Code y ya tienes `/idea` y `/to-linear`.
 
 ## Cómo se usa
 
+### Paso 1: Generar el plan
 1. Corre **`/idea`** y cuéntale tu idea como si me la contaras en una llamada.
+   - "Una app para que freelancers en México den seguimiento a facturas vencidas y envíen recordatorios automáticos por WhatsApp y email..."
 2. El agente te lleva de la mano: propósito, qué hace la app, qué NO va en la primera versión, con qué se construye, qué recuerda, y en qué etapas se arma.
 3. Al final escribe tu plan en `_plan/`.
 
-Luego, con el plan listo:
+### Paso 2: Ver tu plan
+- Abre **`_plan/plan.html`** en tu navegador (doble click) — se ve profesional, con dark mode, imprimible.
+- Ejemplo real: [`examples/ejemplo-plan.html`](examples/ejemplo-plan.html) (CobraFácil: app de cobros automatizados).
 
-- **Para construir:** abre `_plan/milestones/1-…/prompt.md`, arranca una sesión nueva y dile al agente "empieza por aquí". Construye solo esa etapa, deja nota de lo que hizo, y sigues con la siguiente.
-- **Para el equipo:** corre **`/to-linear`** y todo queda como tareas en Linear.
+### Paso 3: Construir por etapas
+Abre `_plan/milestones/1-…/prompt.md` (la instrucción de cada etapa), arranca una sesión nueva y dile al agente: "empieza por aquí". Construye solo esa etapa, deja nota de lo que hizo, y sigues con la siguiente.
+
+### Paso 4: Opcional — sincronizar con Linear
+Corre **`/to-linear`** y todas las etapas se vuelven tareas + milestones en tu workspace de Linear.
 
 ---
 

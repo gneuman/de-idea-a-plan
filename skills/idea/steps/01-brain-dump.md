@@ -8,7 +8,7 @@ Si el primer mensaje del usuario ya describe sustantivamente la idea (más de 2 
 
 ## Caso B — el primer mensaje es vago
 
-Si el mensaje fue genérico ("ayúdame con una especificación", "necesito un documento para un cliente"), pide brain dump en texto libre:
+Si el mensaje fue genérico ("ayúdame con un plan", "necesito un documento para un cliente"), pide brain dump en texto libre:
 
 > Antes de empezar, descríbeme la idea como si me la estuvieras contando en una llamada. Tres cosas:
 >

@@ -1,10 +1,10 @@
-# Íconos Lucide — catálogo curado para la especificación HTML
+# Íconos Lucide — catálogo curado para el plan HTML
 
-El `especificacion.html` usa [Lucide](https://lucide.dev) vía CDN (`lucide@latest`), inicializado con `lucide.createIcons()`. Cada ícono es `<i data-lucide="nombre"></i>`.
+El `plan.html` usa [Lucide](https://lucide.dev) vía CDN (`lucide@latest`), inicializado con `lucide.createIcons()`. Cada ícono es `<i data-lucide="nombre"></i>`.
 
-Usa este set curado para que la especificación se vea consistente. No inventes nombres: si dudas, verifica en lucide.dev/icons.
+Usa este set curado para que el plan se vea consistente. No inventes nombres: si dudas, verifica en lucide.dev/icons.
 
-## Por sección de la especificación
+## Por sección de el plan
 
 | Sección | Ícono (`data-lucide`) |
 |---|---|

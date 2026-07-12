@@ -1,6 +1,6 @@
 # Fase 3 — Propósito central
 
-Sintetiza el brain dump en 1–3 oraciones que respondan: **qué construimos, para quién, qué problema resuelve**. Esto se vuelve el opener de la especificación (sección "Qué estamos construyendo").
+Sintetiza el brain dump en 1–3 oraciones que respondan: **qué construimos, para quién, qué problema resuelve**. Esto se vuelve el opener de el plan (sección "Qué estamos construyendo").
 
 ## Reglas para la síntesis
 

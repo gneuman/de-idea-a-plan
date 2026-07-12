@@ -1,128 +1,98 @@
-# De Idea a Especificaciones
+# De Idea a Plan
 
-**Convierte una idea en una especificación lista para construir — y mándala a Linear solo.**
+**De una idea difusa a un plan claro para construir tu app — y lo mandas a Linear solo.**
 
-Una skill gratis y open source para Claude Code que toma tu idea difusa y la vuelve una especificación cerrada y visual (HTML), milestones ejecutables por un agente, e issues en Linear. En español de México.
+Una herramienta gratis y open source para [Claude Code](https://claude.com/claude-code). Le cuentas tu idea conversando, y en unos minutos tienes un plan visual de lo que se va a construir, partido en etapas, listo para que un agente de IA lo arme sin inventar cosas de más. En español de México.
 
-Inspirado en [PRD Creator de Builder Methods](https://github.com/buildermethods/bm-prd-creator). La diferencia: aquí la especificación sale **visual (HTML)** y los milestones se **suben a Linear** con un comando.
+Inspirada en [PRD Creator de Builder Methods](https://github.com/buildermethods/bm-prd-creator). La diferencia: aquí el plan sale **visual (lo abres en el navegador)** y las etapas se **suben a Linear** con un comando.
 
 ---
 
 ## Qué te llevas
 
-Al terminar la entrevista con el agente, tienes tres cosas en tu repo:
+Al terminar de platicar con el agente, tienes en tu carpeta:
 
-1. **`_especificaciones/especificacion.html`** — la especificación visual. Lo abres con doble click, se ve bien, lo compartes con quien sea (técnico o no).
-2. **`_especificaciones/especificacion.md`** — la misma especificación en Markdown, para editar a mano o que lo lea un agente.
-3. **`_especificaciones/milestones/N-nombre/prompt.md`** — un prompt ejecutable por milestone, para que un agente de código construya de a poco sin perderse.
+1. **`_plan/plan.html`** — el plan visual. Lo abres con doble click y lo entiende cualquiera, técnico o no.
+2. **`_plan/plan.md`** — el mismo plan en texto, para editar a mano o dárselo a un agente.
+3. **`_plan/milestones/…/prompt.md`** — una instrucción por etapa, para que un agente de código construya de a poco sin perderse.
 
-Y si conectas Linear: esos milestones se vuelven **issues + Project Milestones nativos** con el comando `/to-linear`.
+Y si conectas Linear, esas etapas se vuelven **tareas y milestones** con el comando `/to-linear`.
 
-> Mira una especificación de ejemplo ya generado en [`examples/ejemplo-especificacion.html`](examples/ejemplo-especificacion.html) (ábrelo en tu navegador).
+> 👀 Mira un plan de ejemplo ya hecho: [`examples/ejemplo-plan.html`](examples/ejemplo-plan.html) (ábrelo en tu navegador).
 
 ---
 
 ## Por qué existe
 
-Cuando le pides a un agente de IA que construya algo a partir de una idea vaga, improvisa. Inventa features que no pediste, se salta las que sí, y a la tercera sesión ya no sabes qué construyó.
+Cuando le pides a un agente de IA que construya algo desde una idea vaga, improvisa. Inventa cosas que no pediste, se salta las que sí, y a la tercera sesión ya no sabes qué construyó.
 
-Una especificación arregla eso: es la especificación cerrada contra la que el agente construye. Este skill te lo hace **conversando** — una decisión a la vez, siempre proponiendo un default con su razón, para que tú edites en vez de generar desde cero.
+Un plan cerrado arregla eso: es contra lo que el agente construye, sin inventar. Y este lo armas **conversando** — una decisión a la vez, con el agente proponiéndote un default y su razón, para que tú solo corrijas en vez de escribir desde cero. No necesitas saber de código.
 
 ---
 
 ## Instalación
 
-Necesitas [Claude Code](https://claude.com/claude-code).
+### Como plugin (recomendado)
 
-### Opción A — como plugin
+Dentro de Claude Code:
+
+```
+/plugin marketplace add gneuman/de-idea-a-plan
+/plugin install de-idea-a-plan
+```
+
+### O copiando las skills a mano
 
 ```bash
-# Dentro de Claude Code, agrega este repo como plugin:
-/plugin marketplace add gneuman/de-idea-a-especificaciones
-/plugin install de-idea-a-especificaciones
+git clone https://github.com/gneuman/de-idea-a-plan.git
+cp -r de-idea-a-plan/skills/idea ~/.claude/skills/idea
+cp -r de-idea-a-plan/skills/to-linear ~/.claude/skills/to-linear
 ```
 
-### Opción B — copiar las skills a mano
-
-```bash
-git clone https://github.com/gneuman/de-idea-a-especificaciones.git
-cp -r de-idea-a-especificaciones/skills/especifica ~/.claude/skills/especifica
-cp -r de-idea-a-especificaciones/skills/to-linear ~/.claude/skills/to-linear
-```
-
-Reinicia Claude Code y ya tienes `/especifica` y `/to-linear`.
+Reinicia Claude Code y ya tienes `/idea` y `/to-linear`.
 
 ---
 
-## Conectar Linear (opcional pero es lo bueno)
+## Cómo se usa
 
-El skill `/to-linear` sube tus milestones a Linear. Para eso necesitas el MCP de Linear conectado:
+1. Corre **`/idea`** y cuéntale tu idea como si me la contaras en una llamada.
+2. El agente te lleva de la mano: propósito, qué hace la app, qué NO va en la primera versión, con qué se construye, qué recuerda, y en qué etapas se arma.
+3. Al final escribe tu plan en `_plan/`.
 
-1. Copia [`.mcp.json.example`](.mcp.json.example) a `.mcp.json` en tu repo (o agrégalo a tu config global de Claude Code).
-2. Dentro de Claude Code corre `/mcp` y autentícate con tu cuenta de Linear.
-3. Listo. Ahora `/to-linear` puede crear issues y milestones.
+Luego, con el plan listo:
 
-Sin Linear, el skill igual te genera la especificación y los prompts por milestone — solo no los sube.
-
----
-
-## El flujo
-
-Todo pasa conversando con el agente. Corres `/especifica`, le cuentas tu idea, y él te guía por estas fases (una decisión a la vez, con defaults que puedes aceptar de golpe):
-
-| # | Fase | Qué se decide |
-|---|------|---------------|
-| 1 | **Brain dump** | Cuentas la idea en tus palabras, sin formato. |
-| 2 | **Formato** | HTML, Markdown o ambos. |
-| 3 | **Propósito** | El qué-es en 1–3 oraciones. |
-| 4 | **Features** | Las 4–8 cosas que la app hace (in-scope). |
-| 5 | **Fuera de alcance** | Lo que NO va en v1 (igual de importante). |
-| 6 | **Stack** | Detecta lo que ya tienes o recomienda uno. |
-| 7 | **Integraciones** | Qué servicios externos y qué credenciales (con catálogo LATAM). |
-| 8 | **Modelo de datos** | Qué recuerda la app, en lenguaje plano. |
-| 9 | **Scope por feature** | In/out detallado de cada feature. |
-| 10 | **Milestones** | Cómo trocear el build en sesiones cerradas. |
-| 11 | **Riesgos y supuestos** | Qué puede tronar y qué se asume. |
-| 12 | **Escribir** | Genera los archivos en `_especificaciones/`. |
-
-Luego, opcional:
-
-```
-/to-linear
-```
-
-...y tus milestones ya son issues en Linear, listos para que el equipo (o un agente) los tome.
+- **Para construir:** abre `_plan/milestones/1-…/prompt.md`, arranca una sesión nueva y dile al agente "empieza por aquí". Construye solo esa etapa, deja nota de lo que hizo, y sigues con la siguiente.
+- **Para el equipo:** corre **`/to-linear`** y todo queda como tareas en Linear.
 
 ---
 
-## Cómo usar el output
+## Conectar Linear (opcional)
 
-- **Para revisar:** abre `_especificaciones/especificacion.html` en el navegador.
-- **Para construir con un agente:** arranca una sesión nueva, abre `_especificaciones/milestones/1-*/prompt.md` y dile al agente "empieza por aquí". El agente planea y construye solo ese milestone, y al terminar escribe un `milestone-log.md` con lo que hizo. Repites por cada milestone.
-- **Para el equipo:** corre `/to-linear` y trabaja desde Linear.
+`/to-linear` sube las etapas a Linear. Necesitas el conector (MCP) de Linear:
+
+1. Copia [`.mcp.json.example`](.mcp.json.example) a `.mcp.json`.
+2. En Claude Code corre `/mcp` y entra con tu cuenta de Linear.
+
+Sin Linear, el plan y las instrucciones por etapa igual se generan — solo no se suben.
 
 ---
 
-## Personalizarlo
+## Hazlo tuyo
 
-Cada skill tiene un bloque `## [CUSTOMIZE]` al final con su config en YAML: idioma, marca del footer, carpeta de salida, stack default, labels de Linear. Edítalo al forkear para tu contexto.
-
-Por ejemplo, para cambiar el idioma de la especificación a español neutro o inglés, edita `idioma:` en `skills/especifica/SKILL.md`.
+Cada skill trae un bloque `## [CUSTOMIZE]` al final con su config: idioma, marca del pie de página, carpeta de salida, stack default. Edítalo al forkear. MIT — úsalo, forkéalo, véndelo con tu marca.
 
 ---
 
 ## Créditos
 
-- Flujo idea → especificación → milestones: [PRD Creator](https://github.com/buildermethods/bm-prd-creator) de Brian Casel / Builder Methods.
-- Vertical slices / tracer bullets: [to-tickets](https://github.com/mattpocock/skills) de Matt Pocock (MIT).
-- Adaptación al español, salida HTML y conexión Linear: [Gabriel Neuman / GNB Labs](https://gabrielneuman.com).
-
-MIT. Úsalo, forkéalo, véndelo con tu marca.
+- Flujo idea → plan → etapas: [PRD Creator](https://github.com/buildermethods/bm-prd-creator) de Brian Casel / Builder Methods.
+- Partir el trabajo en tajadas verticales: [to-tickets](https://github.com/mattpocock/skills) de Matt Pocock (MIT).
+- Versión en español, plan visual y conexión a Linear: [Gabriel Neuman / GNB Labs](https://gabrielneuman.com).
 
 ---
 
 ## ¿Quieres que te lo enseñe en vivo?
 
-Doy un workshop donde armamos tu primera especificación + Linear con este flujo, sobre una idea real tuya, en una sentada. Sales con la especificación hecha y el sistema instalado.
+Doy un taller donde armamos tu primer plan + Linear con este flujo, sobre una idea real tuya, en una sentada. Sales con el plan hecho y el sistema funcionando.
 
-→ **[gabrielneuman.com/especifica-creator](https://gabrielneuman.com/especifica-creator/)**
+→ **[gabrielneuman.com/de-idea-a-plan](https://gabrielneuman.com/de-idea-a-plan/)**

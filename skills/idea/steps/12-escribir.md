@@ -2,27 +2,27 @@
 
 Todo bloqueado. **Solo escribe.** Sin draft de aprobación — el usuario aprobó pieza por pieza durante la entrevista.
 
-Todos los archivos salen a `_especificaciones/` (editable en `[CUSTOMIZE]` → `salida_dir`).
+Todos los archivos salen a `_plan/` (editable en `[CUSTOMIZE]` → `salida_dir`).
 
 ## Qué se escribe, según formato
 
 | Formato Fase 2 | Archivos generados |
 |---|---|
-| html | `_especificaciones/especificacion.html` + `_especificaciones/milestones/N-{slug}/prompt.md` |
-| markdown | `_especificaciones/especificacion.md` + `_especificaciones/milestones/N-{slug}/prompt.md` |
-| ambos | `_especificaciones/especificacion.html` + `_especificaciones/especificacion.md` + milestones |
+| html | `_plan/plan.html` + `_plan/milestones/N-{slug}/prompt.md` |
+| markdown | `_plan/plan.md` + `_plan/milestones/N-{slug}/prompt.md` |
+| ambos | `_plan/plan.html` + `_plan/plan.md` + milestones |
 
 **Reglas:**
 
-- Los `prompt.md` de milestone son SIEMPRE markdown, sin importar el formato de la especificación.
+- Los `prompt.md` de milestone son SIEMPRE markdown, sin importar el formato de el plan.
 - Los `prompt.md` se generan siempre.
 
 ## Estructura final
 
 ```
-_especificaciones/
-  especificacion.html                  # si HTML o ambos
-  especificacion.md                    # si Markdown o ambos
+_plan/
+  plan.html                  # si HTML o ambos
+  plan.md                    # si Markdown o ambos
   milestones/
     1-foundation/
       prompt.md
@@ -32,9 +32,9 @@ _especificaciones/
       prompt.md
 ```
 
-## Plantilla de la especificación en HTML
+## Plantilla de el plan en HTML
 
-Lee y sigue `references/especificacion-html-template.md` para el scaffold completo. Llena los placeholders con el estado locked en sesión.
+Lee y sigue `references/plan-html-template.md` para el scaffold completo. Llena los placeholders con el estado locked en sesión.
 
 Reglas adicionales del HTML:
 
@@ -43,12 +43,12 @@ Reglas adicionales del HTML:
 - **Sección de Supuestos** — lista simple.
 - **Footer:** marca de tiempo de generación + el `footer_credito` del bloque `[CUSTOMIZE]`.
 
-## Plantilla de la especificación en Markdown
+## Plantilla de el plan en Markdown
 
 ```markdown
 # {Nombre del proyecto}
 
-> **Sobre este archivo:** Esta especificación vive en `_especificaciones/` y es **temporal**. Documentación y guía para el build inicial del codebase. No funcional. Ningún código, configuración, runtime, test o deploy debe importar, leer o depender de archivos en `_especificaciones/`. Una vez completados los milestones, se puede borrar la carpeta.
+> **Sobre este archivo:** Este plan vive en `_plan/` y es **temporal**. Documentación y guía para el build inicial del codebase. No funcional. Ningún código, configuración, runtime, test o deploy debe importar, leer o depender de archivos en `_plan/`. Una vez completados los milestones, se puede borrar la carpeta.
 
 ## Qué estamos construyendo
 
@@ -130,44 +130,44 @@ Vas a entrar a plan mode para planear y luego construir el Milestone {N} del pro
 ## Contexto
 
 - Lee `@{ESPEC_PATH}` para el contexto completo: scope, modelo de datos, stack, integraciones.
-- Lee los `milestone-log.md` de milestones previos (`@_especificaciones/milestones/1-*/milestone-log.md`, etc) para entender qué ya se construyó. Si estás en milestone 1, no hay previos.
+- Lee los `milestone-log.md` de milestones previos (`@_plan/milestones/1-*/milestone-log.md`, etc) para entender qué ya se construyó. Si estás en milestone 1, no hay previos.
 
 ## Tu tarea
 
-1. Planea la implementación SOLO del Milestone {N} como está definido en la especificación. No planees ni construyas nada de milestones posteriores.
+1. Planea la implementación SOLO del Milestone {N} como está definido en el plan. No planees ni construyas nada de milestones posteriores.
 2. Cuando confirme el plan, construye SOLO lo del scope de Milestone {N}.
 3. Verifica contra el "Done when" del milestone.
 4. Cuando termines, escribe un `milestone-log.md` en esta carpeta resumiendo:
    - Qué se construyó (archivos creados, modelos agregados, rutas, etc)
    - Decisiones tomadas durante la implementación que no estaban pre-especificadas
    - Qué necesita saber el siguiente milestone
-   - Cualquier desviación de la especificación y por qué
+   - Cualquier desviación de el plan y por qué
 
 Pregúntame lo que necesites con `AskUserQuestion` para cerrar el plan de implementación de este milestone.
 ```
 
 `{ESPEC_PATH}` se reemplaza con:
-- HTML solo: `_especificaciones/especificacion.html`
-- Markdown solo o Ambos: `_especificaciones/especificacion.md` (el agente lo parsea mejor)
+- HTML solo: `_plan/plan.html`
+- Markdown solo o Ambos: `_plan/plan.md` (el agente lo parsea mejor)
 
 ## Nota a CLAUDE.md / AGENTS.md
 
-Después de escribir los archivos en `_especificaciones/`, agrega esta sección al final de `CLAUDE.md` (si existe) o crea `AGENTS.md`:
+Después de escribir los archivos en `_plan/`, agrega esta sección al final de `CLAUDE.md` (si existe) o crea `AGENTS.md`:
 
 ```markdown
-## `_especificaciones/`
+## `_plan/`
 
-`_especificaciones/` contiene la especificación inicial y los prompts por milestone usados para scaffold del codebase en su fase inicial. Son archivos **temporales** — documentación y guía. **No funcional**: ningún código, config o runtime debe importar, referenciar o depender de nada en `_especificaciones/`. Una vez completados los milestones, se puede borrar.
+`_plan/` contiene el plan inicial y los prompts por milestone usados para scaffold del codebase en su fase inicial. Son archivos **temporales** — documentación y guía. **No funcional**: ningún código, config o runtime debe importar, referenciar o depender de nada en `_plan/`. Una vez completados los milestones, se puede borrar.
 ```
 
-Si ya existe una sección `## _especificaciones/`, actualízala en lugar de duplicar.
+Si ya existe una sección `## _plan/`, actualízala en lugar de duplicar.
 
 ## Mensaje final al usuario
 
 > Listo. Tres cosas:
 >
-> 1. Abre `_especificaciones/especificacion.html` para revisar el plan visualmente.
-> 2. Cuando arranques Milestone 1, abre `_especificaciones/milestones/1-{slug}/prompt.md` y dile al agente "empieza por aquí".
+> 1. Abre `_plan/plan.html` para revisar el plan visualmente.
+> 2. Cuando arranques Milestone 1, abre `_plan/milestones/1-{slug}/prompt.md` y dile al agente "empieza por aquí".
 > 3. Después de cada milestone, el agente escribe `milestone-log.md` en esa carpeta con qué se hizo.
 >
 > ¿Quieres mandar estos milestones a Linear como issues? Corre el skill `to-linear` (necesitas el MCP de Linear conectado).

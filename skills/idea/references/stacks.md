@@ -26,7 +26,7 @@ Muchos starters (create-t3-app, etc.) ya traen:
 - Dark mode toggle
 - Email transaccional con preview en dev
 
-Si tu starter ya trae esto, NO lo re-especifiques en la especificación. Si arrancas desde cero, esas piezas SÍ entran a la especificación.
+Si tu starter ya trae esto, NO lo re-especifiques en el plan. Si arrancas desde cero, esas piezas SÍ entran a el plan.
 
 ## Stack Rails (alternativa full-stack)
 

@@ -95,9 +95,9 @@ In-scope detallado al nivel "lo que el usuario ve". Out-of-scope explícito (qu�
 
 Si vas en feature 4 de 7 y el usuario empieza a contestar "como veas":
 
-> Voy con mis defaults para las que quedan. Las marco con 🤖 en el Especificación para que las revises antes de firmar. ¿Vamos?
+> Voy con mis defaults para las que quedan. Las marco con 🤖 en el Plan para que las revises antes de firmar. ¿Vamos?
 
-Si dice sí: pre-llena las restantes y avanza a Fase 10. Marca cada una como `auto: true` para flag visual en la especificación final.
+Si dice sí: pre-llena las restantes y avanza a Fase 10. Marca cada una como `auto: true` para flag visual en el plan final.
 
 ## Bloquear
 

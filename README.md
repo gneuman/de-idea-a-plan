@@ -4,8 +4,6 @@
 
 Una herramienta gratis y open source para [Claude Code](https://claude.com/claude-code). Le cuentas tu idea conversando, y en unos minutos tienes un plan visual de lo que se va a construir, partido en etapas, listo para que un agente de IA lo arme sin inventar cosas de más. En español de México.
 
-Inspirada en [PRD Creator de Builder Methods](https://github.com/buildermethods/bm-prd-creator). La diferencia: aquí el plan sale **visual (lo abres en el navegador)** y las etapas se **suben a Linear** con un comando.
-
 ---
 
 ## Qué te llevas
@@ -85,9 +83,7 @@ Cada skill trae un bloque `## [CUSTOMIZE]` al final con su config: idioma, marca
 
 ## Créditos
 
-- Flujo idea → plan → etapas: [PRD Creator](https://github.com/buildermethods/bm-prd-creator) de Brian Casel / Builder Methods.
-- Partir el trabajo en tajadas verticales: [to-tickets](https://github.com/mattpocock/skills) de Matt Pocock (MIT).
-- Versión en español, plan visual y conexión a Linear: [Gabriel Neuman / GNB Labs](https://gabrielneuman.com).
+Hecho por [Gabriel Neuman / GNB Labs](https://gabrielneuman.com). Licencia MIT — ver [`LICENSE`](LICENSE) para las atribuciones del trabajo previo en que se apoya.
 
 ---
 

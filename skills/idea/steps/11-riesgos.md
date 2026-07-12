@@ -1,6 +1,6 @@
 # Fase 11 — Riesgos y supuestos
 
-Esta fase NO está en el `bm-prd-creator` original. La agregamos porque los **supuestos** son lo que un agente de código asume sin re-preguntar — si algo cambia, queda documentado por qué se decidió así. Y los **riesgos** te avisan qué puede tronar antes de que trones tú.
+Esta fase captura los **supuestos** (lo que un agente de código asume sin re-preguntar — si algo cambia, queda documentado por qué se decidió así) y los **riesgos** (qué puede tronar antes de que trones tú).
 
 ## Cómo proponer
 

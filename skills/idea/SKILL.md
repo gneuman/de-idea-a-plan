@@ -12,7 +12,7 @@ user_invocable: true
 
 # /idea — De Idea a Plan
 
-Convierte una idea cruda en un plan estructurado + milestones, en español de México, listo para construir. Inspirado en [`buildermethods/bm-prd-creator`](https://github.com/buildermethods/bm-prd-creator) (Brian Casel / Builder Methods) — este fork agrega **salida visual en HTML** y **conexión con Linear** (vía el skill `to-linear`).
+Convierte una idea cruda en un plan estructurado + milestones, en español de México, listo para construir. Genera el plan con **salida visual en HTML** y lo conecta con **Linear** (vía el skill `to-linear`).
 
 ## Qué te llevas
 

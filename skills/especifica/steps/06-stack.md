@@ -57,10 +57,10 @@ El starter ya provee:
 - Email transaccional (preview en dev)
 - Job queue / cron
 
-¿Confirmas que esto NO se re-especifica en el PRD, o quitamos algo?
+¿Confirmas que esto NO se re-especifica en la especificación, o quitamos algo?
 ```
 
-Ajusta la lista a lo que el usuario diga que su starter incluye. Si no usa starter (proyecto desde cero), esta lista va vacía y esas features SÍ entran al PRD.
+Ajusta la lista a lo que el usuario diga que su starter incluye. Si no usa starter (proyecto desde cero), esta lista va vacía y esas features SÍ entran a la especificación.
 
 ## 6. Bloquear
 

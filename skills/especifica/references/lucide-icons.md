@@ -1,10 +1,10 @@
-# Íconos Lucide — catálogo curado para el PRD HTML
+# Íconos Lucide — catálogo curado para la especificación HTML
 
-El `prd.html` usa [Lucide](https://lucide.dev) vía CDN (`lucide@latest`), inicializado con `lucide.createIcons()`. Cada ícono es `<i data-lucide="nombre"></i>`.
+El `especificacion.html` usa [Lucide](https://lucide.dev) vía CDN (`lucide@latest`), inicializado con `lucide.createIcons()`. Cada ícono es `<i data-lucide="nombre"></i>`.
 
-Usa este set curado para que el PRD se vea consistente. No inventes nombres: si dudas, verifica en lucide.dev/icons.
+Usa este set curado para que la especificación se vea consistente. No inventes nombres: si dudas, verifica en lucide.dev/icons.
 
-## Por sección del PRD
+## Por sección de la especificación
 
 | Sección | Ícono (`data-lucide`) |
 |---|---|

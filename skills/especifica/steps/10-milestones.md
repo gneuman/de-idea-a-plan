@@ -70,7 +70,7 @@ Tradeoff rápido: menos milestones = más riesgo por sesión pero más rápido. 
 Para cada milestone confirma:
 
 1. **Nombre corto** (ej: "Foundation", "Integraciones", "Pulido público")
-2. **Slug en kebab-case** (ej: `foundation`, `integraciones`, `pulido-publico`) — se usa en el path `_prd/milestones/N-{slug}/`
+2. **Slug en kebab-case** (ej: `foundation`, `integraciones`, `pulido-publico`) — se usa en el path `_especificaciones/milestones/N-{slug}/`
 3. **Framing de 1–2 oraciones** — qué entrega
 4. **In-scope** — features visibles que entrega (sub-set de las features locked en Fase 4)
 5. **Out-of-scope explícito** — qué un coder podría asumir que va en este milestone pero NO

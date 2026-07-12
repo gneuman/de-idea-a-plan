@@ -2,7 +2,7 @@
 .mcp.json
 
 # PRDs generados al probar el skill
-_prd/
+_especificaciones/
 
 # OS / editor
 .DS_Store

@@ -1,12 +1,12 @@
-# Template HTML del PRD
+# Template HTML de la especificación
 
-Cuando el usuario eligió **HTML** o **Ambos** en Fase 2, escribe `prd.html` (en `_prd/`) usando este scaffold.
+Cuando el usuario eligió **HTML** o **Ambos** en Fase 2, escribe `especificacion.html` (en `_especificaciones/`) usando este scaffold.
 
 Archivo autocontenido — solo CDN de Tailwind, Google Fonts e íconos Lucide. Sin build step, sin imports locales.
 
 ## Scaffold base
 
-Empieza cada `prd.html` con esto. Llena los `{{PLACEHOLDERS}}` y bloques de sección descritos abajo. NO renombres clases CSS — están escritas para Tailwind Play CDN.
+Empieza cada `especificacion.html` con esto. Llena los `{{PLACEHOLDERS}}` y bloques de sección descritos abajo. NO renombres clases CSS — están escritas para Tailwind Play CDN.
 
 ```html
 <!doctype html>
@@ -14,7 +14,7 @@ Empieza cada `prd.html` con esto. Llena los `{{PLACEHOLDERS}}` y bloques de secc
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{APP_NAME}} — PRD</title>
+  <title>{{APP_NAME}} — Especificación</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { darkMode: 'class' };
@@ -41,7 +41,7 @@ Empieza cada `prd.html` con esto. Llena los `{{PLACEHOLDERS}}` y bloques de secc
 <body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
   <header class="sticky top-0 z-10 backdrop-blur bg-zinc-50/80 dark:bg-zinc-950/80 border-b border-zinc-200 dark:border-zinc-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <span class="text-sm font-medium text-zinc-500 dark:text-zinc-400">PRD · {{APP_NAME}}</span>
+      <span class="text-sm font-medium text-zinc-500 dark:text-zinc-400"&gt;Especificación · {{APP_NAME}}</span>
       <button id="theme-toggle" class="no-print inline-flex items-center justify-center w-9 h-9 rounded-md border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition" aria-label="Cambiar tema">
         <i data-lucide="sun" class="hidden dark:inline-block w-4 h-4"></i>
         <i data-lucide="moon" class="inline-block dark:hidden w-4 h-4"></i>
@@ -157,14 +157,14 @@ Empieza cada `prd.html` con esto. Llena los `{{PLACEHOLDERS}}` y bloques de secc
 
     <footer class="pt-8 border-t border-zinc-200 dark:border-zinc-800 text-xs text-zinc-500 dark:text-zinc-400 flex items-center justify-between">
       <span>{{FOOTER_CREDITO}} · {{TIMESTAMP}}</span>
-      <span class="hidden sm:inline">PRD de build</span>
+      <span class="hidden sm:inline">Especificación de build</span>
     </footer>
   </main>
 
   <script>
     (function () {
       var html = document.documentElement;
-      var stored = localStorage.getItem('prd-theme');
+      var stored = localStorage.getItem('espec-theme');
       var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       var initial = stored ? stored : (prefersDark ? 'dark' : 'light');
       if (initial === 'dark') html.classList.add('dark');
@@ -172,7 +172,7 @@ Empieza cada `prd.html` con esto. Llena los `{{PLACEHOLDERS}}` y bloques de secc
       if (btn) {
         btn.addEventListener('click', function () {
           var isDark = html.classList.toggle('dark');
-          localStorage.setItem('prd-theme', isDark ? 'dark' : 'light');
+          localStorage.setItem('espec-theme', isDark ? 'dark' : 'light');
         });
       }
       if (window.lucide) window.lucide.createIcons();
@@ -190,7 +190,7 @@ Bloque amber (nota de "archivo temporal"):
 
 ```html
 <div class="rounded-lg border border-amber-200 dark:border-amber-900/60 bg-amber-50 dark:bg-amber-950/30 p-4 text-sm text-amber-900 dark:text-amber-200">
-  <p><strong class="font-semibold">Sobre este archivo:</strong> Todo en <code class="font-mono text-xs">_prd/</code> (este PRD y las carpetas de milestones) es un artefacto temporal de documentación para el build inicial. No es funcional — ningún código, configuración, runtime, test o deploy debe importar, leer o depender de archivos en <code class="font-mono text-xs">_prd/</code>. Cuando los milestones estén completos, se puede borrar la carpeta.</p>
+  <p><strong class="font-semibold">Sobre este archivo:</strong> Todo en <code class="font-mono text-xs">_especificaciones/</code> (esta especificación y las carpetas de milestones) es un artefacto temporal de documentación para el build inicial. No es funcional — ningún código, configuración, runtime, test o deploy debe importar, leer o depender de archivos en <code class="font-mono text-xs">_especificaciones/</code>. Cuando los milestones estén completos, se puede borrar la carpeta.</p>
 </div>
 ```
 
@@ -372,7 +372,7 @@ Fecha local en formato `YYYY-MM-DD`.
 
 ### `{{FOOTER_CREDITO}}`
 
-El valor de `footer_credito` del bloque `[CUSTOMIZE]` del SKILL. Default: `"Generado con PRD Creator · gabrielneuman.com"`.
+El valor de `footer_credito` del bloque `[CUSTOMIZE]` del SKILL. Default: `"Generado con De Idea a Especificaciones · gabrielneuman.com"`.
 
 ## Íconos Lucide — pista rápida
 

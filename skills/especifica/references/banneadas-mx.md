@@ -1,6 +1,6 @@
 # Banneadas — Español de México
 
-Lista de patrones prohibidos en el PRD generado, en la conversación durante la entrevista, y en los `prompt.md` por milestone. Esta lista se aplica además de las reglas globales de `skills/voz-gnb/`.
+Lista de patrones prohibidos en la especificación generada, en la conversación durante la entrevista, y en los `prompt.md` por milestone. Esta lista se aplica además de las reglas globales de `skills/voz-gnb/`.
 
 ## Voseo y argentinismos
 
@@ -76,9 +76,9 @@ Reemplaza cuando exista equivalente claro en español:
 
 **Regla:** términos técnicos del oficio (feature, prompt, API, branch, deploy, milestone) se quedan en inglés porque cambiar los nombres confunde. Anglicismos generales (dashboard, deliverable, timeline) van a español.
 
-## Anti-patrones de PRD
+## Anti-patrones de especificaciones
 
-Frases que delatan PRD genérico de ChatGPT — prohibidas:
+Frases que delatan especificación genérica de ChatGPT — prohibidas:
 
 - "Esta plataforma busca..." → di qué hace
 - "Es importante destacar que..." → solo afirma
@@ -90,7 +90,7 @@ Frases que delatan PRD genérico de ChatGPT — prohibidas:
 
 ## Para el agente
 
-Si vas a escribir algo en el PRD y dudas si pasa el filtro:
+Si vas a escribir algo en la especificación y dudas si pasa el filtro:
 
 1. ¿Una persona real lo diría hablando? Si no, fuera.
 2. ¿Lo puedes reemplazar con un sustantivo concreto o un verbo de acción? Hazlo.

@@ -1,7 +1,7 @@
 {
-  "name": "prd-creator-gnb",
+  "name": "de-idea-a-especificaciones",
   "version": "0.1.0",
-  "description": "Convierte una idea cruda en un PRD visual (HTML) + milestones ejecutables, y lo manda a Linear como issues. En español de México. Fork de buildermethods/bm-prd-creator con salida HTML y conexión a Linear.",
+  "description": "Convierte una idea cruda en una especificación visual (HTML) + milestones ejecutables, y lo manda a Linear como issues. En español de México. Fork de buildermethods/bm-prd-creator con salida HTML y conexión a Linear.",
   "author": {
     "name": "Gabriel Neuman / GNB Labs",
     "url": "https://gabrielneuman.com",

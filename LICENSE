@@ -22,15 +22,17 @@ SOFTWARE.
 
 ---
 
-## Atribuciones
+## Reconocimientos
 
-Este proyecto está inspirado en y adapta trabajo previo:
+Esta es una obra original de Gabriel Neuman / GNB Labs. Al construirla se
+tomaron ideas de trabajo previo de la comunidad, a quienes se reconoce aquí.
+Esto es un reconocimiento de influencia, no una declaración de que este
+proyecto sea una copia o derivado de esos trabajos.
 
-- **PRD Creator** de Brian Casel / Builder Methods
-  (https://github.com/buildermethods/bm-prd-creator) — el flujo de fases
-  idea → PRD → milestones. Este fork agrega salida visual en HTML y la
-  conexión con Linear.
+- La idea de guiar de una idea a un documento de requisitos por fases se
+  inspiró en el trabajo de Brian Casel / Builder Methods
+  (https://github.com/buildermethods/bm-prd-creator).
 
-- **Patrón de vertical slices / tracer bullets** del skill `to-tickets` de
-  Matt Pocock (https://github.com/mattpocock/skills), MIT — usado en el
-  skill `to-linear`.
+- La idea de partir el trabajo en tajadas verticales ("vertical slices" /
+  "tracer bullets") se inspiró en el trabajo de Matt Pocock
+  (https://github.com/mattpocock/skills).

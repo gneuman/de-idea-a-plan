@@ -16,7 +16,7 @@ Al terminar de platicar con el agente, tienes en tu carpeta:
 
 Y si conectas Linear, esas etapas se vuelven **tareas y milestones** con el comando `/to-linear`.
 
-> 👀 Mira un plan de ejemplo ya hecho: [`examples/ejemplo-plan.html`](examples/ejemplo-plan.html) (ábrelo en tu navegador).
+> 👀 Mira un plan de ejemplo ya hecho, renderizado: **[gabrielneuman.com/de-idea-a-plan/ejemplo](https://gabrielneuman.com/de-idea-a-plan/ejemplo/)** (o abre [`examples/ejemplo-plan.html`](examples/ejemplo-plan.html) en tu navegador).
 
 ---
 

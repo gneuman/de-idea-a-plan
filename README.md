@@ -73,8 +73,7 @@ Reinicia Claude Code y ya tienes `/idea` y `/to-linear`.
 
 ### Paso 2: Ver tu plan
 - Abre **`_plan/plan.html`** en tu navegador (doble click) — se ve profesional, con dark mode, imprimible.
-- **Ejemplo:** Plan de "De Idea a Plan" mismo → [gabrielneuman.com/plan/](https://gabrielneuman.com/plan/)
-- **Otro ejemplo:** [CobraFácil](examples/ejemplo-plan.html) (app de cobros automatizados).
+- **Ejemplo renderizado:** [gabrielneuman.com/de-idea-a-plan/ejemplo/](https://gabrielneuman.com/de-idea-a-plan/ejemplo/) (CobraFácil, una app de cobros automatizados).
 
 ### Paso 3: Construir por etapas
 Abre `_plan/milestones/1-…/prompt.md` (la instrucción de cada etapa), arranca una sesión nueva y dile al agente: "empieza por aquí". Construye solo esa etapa, deja nota de lo que hizo, y sigues con la siguiente.
